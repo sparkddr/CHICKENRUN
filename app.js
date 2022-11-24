@@ -1,6 +1,5 @@
 const express = require("express");
-
-const app = express();
+const helmet = require("helmet");
 
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
@@ -10,6 +9,8 @@ const chickensRoutes = require("./routes/chickens");
 
 const MY_APP_USER = process.env.APP_USER;
 const MY_APP_SECRET = process.env.APP_SECRET;
+const app = express();
+app.use(helmet());
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -33,6 +34,6 @@ mongoose
   .then(() => console.log("Connexion à MongoDB réussie !"))
   .catch(() => console.log("Connexion à MongoDB échouée !"));
 
-app.use("/api/chickens", chickensRoutes);
+app.use("/chicken", chickensRoutes);
 
 module.exports = app;

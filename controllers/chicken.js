@@ -17,7 +17,6 @@ exports.getOneChicken = (req, res, next) => {
 
 exports.addChicken = (req, res, next) => {
   const chicken = new Chicken({
-    userId: MY_APP_USER,
     ...req.body,
   });
   chicken
@@ -26,8 +25,7 @@ exports.addChicken = (req, res, next) => {
       res.status(201).json({
         message: "Objet enregistré !",
         objet: {
-          userId: MY_APP_USER,
-          ...req.body,
+          ...chicken._doc,
         },
       })
     )

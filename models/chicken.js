@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const chickenSchema = mongoose.Schema({
-  userId: { type: String, required: true },
+  name: { type: String, required: true },
   birthday: Date,
   weight: { type: Number, required: true },
   steps: { type: Number, default: 0 },
