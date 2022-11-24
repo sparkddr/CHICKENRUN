@@ -1,6 +1,8 @@
 # Chicken Run
 
-Voici l'API backend pour le webservice /chicken :
+Voici l'API backend pour le webservice /chicken
+
+Documentation : https://drive.google.com/file/d/1XxIZyfo5AGHsZA8mM2XXVIHsAvc19ScI/view?usp=sharing
 
 ## Installation
 
