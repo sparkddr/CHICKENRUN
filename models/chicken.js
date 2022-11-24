@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 
 const chickenSchema = mongoose.Schema({
   userId: { type: String, required: true },
-  birthday: { type: Date, required: true },
+  birthday: Date,
   weight: { type: Number, required: true },
-  steps: { type: Number, required: true },
-  isRunning: { type: Boolean, required: true },
+  steps: { type: Number, default: 0 },
+  isRunning: { type: Boolean, default: false },
 });
 
 module.exports = mongoose.model("Chicken", chickenSchema);
